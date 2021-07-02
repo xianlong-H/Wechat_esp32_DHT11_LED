@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<view >
+  <!-- <view class="van-hairline--surround title">环境监测</view> -->
+<!--设备状态-->
+<van-cell-group>
+  <van-cell title="设备状态" value="{{device_status}}" />
+</van-cell-group>
+<!--设备状态-->
+<van-cell-group>
+  <van-cell title="烟感报警" value="{{AlarmOnOff}}" />
+</van-cell-group>
+<view></view>
+<!--温湿度图片显示-->
+<view  class="pic">
+<van-row>
+  <van-col span="8" ><van-icon  size="60px" name="/utils/img/shidu.png" /></van-col>
+  <van-col span="8"><van-icon  size="60px" name="/utils/img/wendu.png" /></van-col>
+  <van-col span="8"><van-icon  size="60px" name="/utils/img/yangan.png" /></van-col>
+</van-row>
+</view>
+<!--温湿度数值-->
+<view  class="wendu">
+  <van-row style="text-align:center;">
+    <van-col span="8">湿度：{{shidu}} %</van-col>
+    <van-col span="8">温度：{{wendu}} ℃</van-col>
+    <van-col span="8">烟感：{{mq}} </van-col>
+  </van-row>
+</view>
+<!--控制灯1-->
+<view  class="light">
+  <van-cell-group>
+<van-cell  title="灯" icon="{{ledicon}}" >
+  <van-switch checked="{{ checked }}" size="24px" bind:change="onChange" />
+</van-cell>
+  </van-cell-group>
+</view>
+<!--控制灯2-->
+<view  class="light2">
+  <van-icon  size="120px" name="{{ledicon}}" bind:click="onChange2"/>
+</view>
+</view>
+
+<view>
+<!--控制风扇1-->
+<view  class="light">
+  <van-cell-group>
+<van-cell  title="风扇" icon="{{fanicon}}" >
+  <van-switch checked="{{ checked1 }}" size="24px" bind:change="onChange3" />
+</van-cell>
+  </van-cell-group> 
+</view>
+<!--控制风扇2-->
+<view  class="light2">
+  <van-icon  size="120px" name="{{fanicon}}" bind:click="onChange4"/>
+</view>
+</view>
